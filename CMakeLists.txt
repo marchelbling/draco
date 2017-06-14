@@ -585,6 +585,9 @@ else ()
               $<TARGET_OBJECTS:draco_points_encoder>)
 
   # Draco app targets.
+  add_executable(draco_cli "${draco_root}/tools/draco_cli.cc")
+  target_link_libraries(draco_cli PUBLIC draco dracodec)
+
   add_executable(draco_decoder "${draco_root}/tools/draco_decoder.cc")
   target_link_libraries(draco_decoder PUBLIC dracodec)
   add_executable(draco_encoder
